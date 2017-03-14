@@ -1027,15 +1027,17 @@
                  //Updating view, popping to MessageList View
                  NSMutableArray *allViewControllers = [NSMutableArray arrayWithArray:[self.navigationController viewControllers]];
                  
-                 for (UIViewController *aViewController in allViewControllers)
-                 {
-                     if ([aViewController isKindOfClass:[ALMessagesViewController class]])
-                     {
-                         ALMessagesViewController * messageVC = (ALMessagesViewController *)aViewController;
-                         [messageVC insertChannelMessage:alChannel.key];
-                         [self.navigationController popToViewController:aViewController animated:YES];
-                     }
-                 }
+				 for (UIViewController *aViewController in allViewControllers)
+				 {
+					 if ([aViewController isKindOfClass:[NSClassFromString(@"HomeVC") class]])
+					 {
+						 UIViewController *messageVC = aViewController;
+						 if([messageVC respondsToSelector:@selector(insertChannelMessage:)]){
+							 [messageVC performSelector:@selector(insertChannelMessage:) withObject:alChannel.key];
+						 }
+						 [self.navigationController popToViewController:aViewController animated:YES];
+					 }
+				 }
              }
              else
              {
