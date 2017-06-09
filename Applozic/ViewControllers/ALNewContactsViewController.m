@@ -631,7 +631,7 @@
 {
     
     ALDBHandler * theDbHandler = [ALDBHandler sharedInstance];
-    
+
     // get all unique contacts
     
     NSFetchRequest * theRequest = [NSFetchRequest fetchRequestWithEntityName:@"DB_CONTACT"];
@@ -659,6 +659,8 @@
 
     NSArray * theArray = [theDbHandler.managedObjectContext executeFetchRequest:theRequest error:nil];
     
+	ALMessageService *msgService = [ALMessageService new];
+	
     for (DB_CONTACT *dbContact in theArray)
     {
         
@@ -673,8 +675,14 @@
         contact.localImageResourceName = dbContact.localImageResourceName;
         contact.contactType = dbContact.contactType;
 
-        
-        [self.contactList addObject:contact];
+		if(self.forGroup.intValue == GROUP_CREATION || self.forGroup.intValue == GROUP_ADDITION){
+			NSUInteger count = [msgService getMessagsCountForUser:dbContact.userId];
+			if(count > 0){
+				[self.contactList addObject:contact];
+			}
+		}else{
+			[self.contactList addObject:contact];
+		}
     }
     
     NSSortDescriptor *valueDescriptor = [[NSSortDescriptor alloc] initWithKey:@"displayName" ascending:YES selector:@selector(caseInsensitiveCompare:)];
@@ -1027,17 +1035,17 @@
                  //Updating view, popping to MessageList View
                  NSMutableArray *allViewControllers = [NSMutableArray arrayWithArray:[self.navigationController viewControllers]];
                  
-				 for (UIViewController *aViewController in allViewControllers)
+                 for (UIViewController *aViewController in allViewControllers)
 				 {
-					 if ([aViewController isKindOfClass:[NSClassFromString(@"HomeVC") class]])
-					 {
-						 UIViewController *messageVC = aViewController;
+                     if ([aViewController isKindOfClass:[NSClassFromString(@"HomeVC") class]])
+                     {
+                         UIViewController *messageVC = aViewController;
 						 if([messageVC respondsToSelector:@selector(insertChannelMessage:)]){
 							 [messageVC performSelector:@selector(insertChannelMessage:) withObject:alChannel.key];
 						 }
-						 [self.navigationController popToViewController:aViewController animated:YES];
-					 }
-				 }
+                         [self.navigationController popToViewController:aViewController animated:YES];
+                     }
+                 }
              }
              else
              {

@@ -160,7 +160,6 @@
 		6D6DF1851BC5364C00EBA00F /* DB_Message.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D6DF0DC1BC5364C00EBA00F /* DB_Message.m */; };
 		6D6DF1861BC5364C00EBA00F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6D6DF0DD1BC5364C00EBA00F /* Images.xcassets */; };
 		6D6DF1881BC5364C00EBA00F /* ALConstant.h in Headers */ = {isa = PBXBuildFile; fileRef = 6D6DF0E11BC5364C00EBA00F /* ALConstant.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		6D6DF1891BC5364C00EBA00F /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6D6DF0E21BC5364C00EBA00F /* Localizable.strings */; };
 		6D6DF1D31BC5364C00EBA00F /* KAProgressLabel.h in Headers */ = {isa = PBXBuildFile; fileRef = 6D6DF1311BC5364C00EBA00F /* KAProgressLabel.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6D6DF1D41BC5364C00EBA00F /* KAProgressLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D6DF1321BC5364C00EBA00F /* KAProgressLabel.m */; };
 		6D6DF1D51BC5364C00EBA00F /* TPPropertyAnimation.h in Headers */ = {isa = PBXBuildFile; fileRef = 6D6DF1331BC5364C00EBA00F /* TPPropertyAnimation.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -456,7 +455,6 @@
 		6D6DF0DC1BC5364C00EBA00F /* DB_Message.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DB_Message.m; path = Applozic/DomainClasses/DB_Message.m; sourceTree = "<group>"; };
 		6D6DF0DD1BC5364C00EBA00F /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = ../Images.xcassets; sourceTree = "<group>"; };
 		6D6DF0E11BC5364C00EBA00F /* ALConstant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALConstant.h; sourceTree = "<group>"; };
-		6D6DF0E31BC5364C00EBA00F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		6D6DF1311BC5364C00EBA00F /* KAProgressLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KAProgressLabel.h; sourceTree = "<group>"; };
 		6D6DF1321BC5364C00EBA00F /* KAProgressLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KAProgressLabel.m; sourceTree = "<group>"; };
 		6D6DF1331BC5364C00EBA00F /* TPPropertyAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPPropertyAnimation.h; sourceTree = "<group>"; };
@@ -832,7 +830,6 @@
 			isa = PBXGroup;
 			children = (
 				6D6DF0E11BC5364C00EBA00F /* ALConstant.h */,
-				6D6DF0E21BC5364C00EBA00F /* Localizable.strings */,
 			);
 			path = Files;
 			sourceTree = "<group>";
@@ -1438,7 +1435,6 @@
 			files = (
 				46AC59861E1D386E00A87291 /* Doxyfile in Resources */,
 				6D7757161D5B83660025560B /* TSMessagesDefaultDesign.json in Resources */,
-				6D6DF1891BC5364C00EBA00F /* Localizable.strings in Resources */,
 				6D6DF1861BC5364C00EBA00F /* Images.xcassets in Resources */,
 				6D6DF16F1BC5364C00EBA00F /* Applozic.storyboard in Resources */,
 				6DAD04FF1D66D6FA005475C9 /* Info.plist in Resources */,
@@ -1648,14 +1644,6 @@
 			);
 			name = Applozic.storyboard;
 			path = Applozic/Base.lproj;
-			sourceTree = "<group>";
-		};
-		6D6DF0E21BC5364C00EBA00F /* Localizable.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				6D6DF0E31BC5364C00EBA00F /* en */,
-			);
-			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

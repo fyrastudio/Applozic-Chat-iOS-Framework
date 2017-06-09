@@ -255,7 +255,9 @@ static CGFloat const sendTextViewCornerRadius = 15.0f;
 {
     BOOL debugflag = [ALUtilityClass isThisDebugBuild];
     BOOL pricingFlag = ([ALUserDefaultsHandler getUserPricingPackage] == BETA);
-   
+	
+	return;
+	
     if(debugflag)
     {
         return;
@@ -343,6 +345,7 @@ static CGFloat const sendTextViewCornerRadius = 15.0f;
     NSString * theAnimationDuration = [self handleKeyboardNotification:notification];
 
     self.checkBottomConstraint.constant = self.view.frame.size.height - keyboardEndFrame.origin.y + navigationWidth;
+	self.checkBottomConstraint.constant = 0;
 //    self.noConversationLabel.frame = CGRectMake(0,
 //                                                self.typingLabel.frame.origin.y -
 //                                                (self.typingLabel.frame.size.height+10),
